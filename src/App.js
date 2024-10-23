@@ -6,8 +6,8 @@ import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import About from "./About";
 import Missing from "./Missing";
-import { Route, Routes } from "react-router-dom";
-import { useState, useEffect, useNavigate } from "react";
+import { useNavigate, Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -38,8 +38,13 @@ function App() {
   ]);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
-  const handleDelete = (id) => {};
+  const handleDelete = (id) => {
+    const postList = posts.filter((post) => post.id !== id);
+    setPosts(postList);
+    navigate("/");
+  };
 
   return (
     <div className="App">
