@@ -116,7 +116,7 @@ function App() {
           element={
             <EditPost
               posts={posts}
-              handleEdit={handleSubmit}
+              handleEdit={handleEdit}
               editTitle={editTitle}
               setEditTitle={setEditTitle}
               editBody={editBody}
