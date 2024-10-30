@@ -87,7 +87,7 @@ function App() {
       );
       setEditTitle("");
       setEditBody("");
-      navigate.push("/");
+      navigate("/");
     } catch (err) {
       console.log(`Error: ${err.message}`);
     }
